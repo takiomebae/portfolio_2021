@@ -1,0 +1,135 @@
+@import "variables";
+
+/* ===============================================
+#  custom mixins
+=============================================== */
+
+// フォント設定 //
+@mixin font() {
+  font-family: Avenir, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Segoe ui", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial,
+    "メイリオ", Meiryo, sans-serif;
+  word-wrap: break-word;
+  word-break: break-all;
+  -webkit-font-kerning: normal;
+  font-kerning: normal;
+  -moz-font-feature-settings: "palt";
+  -webkit-font-feature-settings: "palt";
+  font-feature-settings: "palt";
+  font-variant-ligatures: no-common-ligatures;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: auto;
+  -webkit-text-stroke: 1px transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  letter-spacing: 0.05rem;
+  font-weight: 400;
+  color: $text;
+}
+
+@mixin button($color: $primary, $size: medium) {
+  border: $color;
+  color: $color;
+
+  @if $size==xsmall {
+    font-size: 0.8rem;
+  }
+
+  @else if $size==small {
+    font-size: 0.88rem;
+  }
+
+  @else if $size==big {
+    font-size: 1.1rem;
+  }
+
+  @else {
+    font-size: 1rem;
+  }
+}
+
+@mixin link($color: $text) {
+  color: $color;
+
+  &:hover {
+    @include opacity(0.7);
+    text-decoration: none;
+  }
+
+  &.active {
+    font-weight: 600;
+  }
+}
+
+/* ===============================================
+#  common mixin
+=============================================== */
+
+// IE対応のopacity //
+@mixin opacity($opacity) {
+  $ieopacity: $opacity * 100;
+  opacity: $opacity;
+  filter: alpha(opacity=$ieopacity);
+}
+
+// flex中央寄せ //
+@mixin center($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  // justify-content: center;
+}
+
+// transition delay //
+@mixin transitionDelay($number: 5, $duration: 0.4s, $delay: 0.15s) {
+  transition: $duration ease;
+
+  @for $i from 0 to $number {
+    &:nth-child(#{$i + 1}) {
+      transition-delay: $delay * $i;
+    }
+  }
+}
+
+// 三角形生成 //
+@mixin triangle($direction: right, $size: 12, $color: gray) {
+  $set: left;
+
+  @if $direction==left {
+    $set: right;
+  }
+
+  @else if $direction==top {
+    $set: bottom;
+  }
+
+  @else if $direction==bottom {
+    $set: top;
+  }
+
+  @else {
+    $set: left;
+  }
+
+  $size: round($size / 2);
+  width: 0;
+  height: 0;
+  border: $size+px solid transparent;
+  border-#{$set}-color: $color;
+}
+
+// 背景斜線 //
+@mixin border-background($color1: #f6f6f6, $color2: #e0e0e0, $size: 7px) {
+  background-color: $color1;
+  background-image: -webkit-gradient(linear,
+      0 0,
+      100% 100%,
+      color-stop(0.25, $color2),
+      color-stop(0.25, transparent),
+      color-stop(0.5, transparent),
+      color-stop(0.5, $color2),
+      color-stop(0.75, $color2),
+      color-stop(0.75, transparent),
+      to(transparent));
+  -webkit-background-size: $size $size;
+}

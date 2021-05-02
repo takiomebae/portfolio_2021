@@ -1,0 +1,74 @@
+@charset "UTF-8";
+@import "mixins";
+
+/* ===============================================
+#  basic setting
+=============================================== */
+html {
+  @include font();
+  min-height: 100%;
+  position: relative;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size: 100%;
+
+  @media (max-width: 768px) {
+    font-size: 90%;
+  }
+}
+
+p {
+  font-size: 14px
+}
+
+small {
+  font-size: 14px
+}
+
+body {
+  min-width: 900px;
+  transition: 1s;
+  @include font();
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+  min-width: 500px;
+
+  #container {
+    overflow: hidden;
+    background: #fff;
+  }
+}
+
+* {
+  white-space: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input,
+button,
+textarea,
+button,
+select {
+  @include font();
+  border: none;
+  outline: none;
+  font-size: 1rem;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+a {
+  color: $text;
+  text-decoration: none;
+}
