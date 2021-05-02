@@ -614,11 +614,25 @@ footer {
         margin-top: 50px;
         padding-top: 100px;
 
+        .aboutBox {
+          p {
+            margin-bottom: 10px;
+          }
+
+          small {
+            margin-left: 0;
+          }
+        }
+
         .tab-group {
           margin-bottom: 15px;
 
           .tab {
             font-size: 12px;
+          }
+
+          .tab:last-child {
+            margin-right: 25px;
           }
 
           .tab.is-active {

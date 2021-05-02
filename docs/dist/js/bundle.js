@@ -151,20 +151,46 @@ window.addEventListener("scroll", function () {
   let scroll = window.pageYOffset;
   var works = document.getElementById('works');
 
-  if (scroll > 2450) {
-    works.style.backgroundColor = '#fff';
-  } else if (scroll > 2100) {
-    works.style.backgroundColor = '#f6f6f6';
-  } else if (scroll > 1800) {
-    works.style.backgroundColor = '#e9e9e9';
-  } else if (scroll > 1500) {
-    works.style.backgroundColor = '#c2c2c2';
-  } else if (scroll > 1200) {
-    works.style.backgroundColor = '#aaaaaa';
-  } else if (scroll > 1000) {
-    works.style.backgroundColor = '#797979';
-  } else {
-    works.style.backgroundColor = '#797979';
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    if (scroll > 1501) {
+      works.style.backgroundColor = '#f6f6f6';
+    } else if (scroll > 1500) {
+      works.style.backgroundColor = '#e9e9e9';
+    } else if (scroll > 1400) {
+      works.style.backgroundColor = '#dddddd';
+    } else if (scroll > 1200) {
+      works.style.backgroundColor = '#c3c3c3';
+    } else if (scroll > 1000) {
+      works.style.backgroundColor = '#dddddd';
+    } else if (scroll > 900) {
+      works.style.backgroundColor = '#e9e9e9';
+    } else if (scroll > 690) {
+      works.style.backgroundColor = '#f6f6f6';
+    } else {
+      works.style.backgroundColor = '#f6f6f6';
+    }
+  } else if (window.matchMedia('(min-width:768px)').matches) {
+    if (scroll > 2450) {
+      works.style.backgroundColor = '#fff';
+    } else if (scroll > 2100) {
+      works.style.backgroundColor = '#f6f6f6';
+    } else if (scroll > 1900) {
+      works.style.backgroundColor = '#e9e9e9';
+    } else if (scroll > 1700) {
+      works.style.backgroundColor = '#ddd';
+    } else if (scroll > 1600) {
+      works.style.backgroundColor = '#c3c3c3';
+    } else if (scroll > 1400) {
+      works.style.backgroundColor = '#ddd';
+    } else if (scroll > 1200) {
+      works.style.backgroundColor = '#e9e9e9';
+    } else if (scroll > 1200) {
+      works.style.backgroundColor = '#f6f6f6';
+    } else if (scroll > 1100) {
+      works.style.backgroundColor = '#fff';
+    } else {
+      works.style.backgroundColor = '#fff';
+    }
   }
 });
 
