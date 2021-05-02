@@ -644,6 +644,7 @@ footer {
           }
 
           .aboutTxtBox {
+
             .aboutName {
               margin-bottom: 5px;
 
@@ -727,20 +728,24 @@ footer {
 
       .profile {
         width: 100vw;
-        margin-bottom: 120px;
+        margin-bottom: 90px;
 
         .aboutBox {
           display: block;
 
           .aboutTxtBox {
-            position: inherit;
-            width: 100%;
+            position: relative;
+            width: 90%;
             padding-right: 5%;
             padding-left: 5%;
+            /* right: 0px; */
+            margin-left: auto;
+            margin-right: 0;
+            top: -27px;
           }
 
           .aboutImg {
-            width: 100%;
+            width: 80%;
           }
         }
       }
@@ -750,6 +755,10 @@ footer {
       }
 
       footer {
+        .footLogo {
+          width: 15%;
+        }
+
         nav {
           ul {
             li::after {
@@ -780,12 +789,42 @@ footer {
     }
 
     .works {
+      margin-bottom: 90px;
+      padding-bottom: 60px;
+
       .inner {
         .smallTtl {
           font-size: 14px;
         }
       }
     }
+
+    .contactImgInner {
+      // overflow: inherit;
+      height: 25vh;
+
+      img {
+        top: -30%;
+      }
+    }
+
+    .contact {
+      margin-bottom: 90px;
+
+      .contactTtl {
+        width: 100%;
+
+        h2 {
+          font-size: 25px;
+          margin-bottom: 8px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+
   }
 }
 
