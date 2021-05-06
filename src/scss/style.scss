@@ -123,8 +123,18 @@ header {
   }
 
   section {
+
     // margin-right: calc(140/1400*100%);
     // margin-left: calc(140/1400*100%);
+    .b_title {
+      font-size: 200px;
+      text-align: right;
+      position: relative;
+      top: 115px;
+      opacity: .8;
+      font-style: italic;
+      color: #f6f6f6;
+    }
 
     .ttl {
       display: flex;
@@ -145,7 +155,7 @@ header {
   }
 
   .profile {
-    padding-top: 100px;
+    // padding-top: 100px;
     margin-bottom: 220px;
 
     .contentHeader {
@@ -555,6 +565,7 @@ footer {
   list-style: none;
   text-align: center;
   cursor: pointer;
+  z-index: 2;
 }
 
 .tab:hover {
@@ -626,7 +637,7 @@ footer {
 
       .profile {
         margin-top: 50px;
-        padding-top: 100px;
+        padding-top: 50px;
 
         .aboutBox {
           p {
@@ -674,16 +685,22 @@ footer {
       }
 
       section {
+
+        .b_title {
+          font-size: 50px;
+          top: 35px;
+        }
+
         .ttl {
-          flex-direction: column;
-          margin-bottom: 30px;
+          // flex-direction: column;
+          margin-bottom: 40px;
 
           h2 {
             font-size: 25px;
           }
 
           span {
-            margin-left: 0;
+            margin-left: 15px;
           }
         }
       }
