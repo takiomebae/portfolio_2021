@@ -14,6 +14,9 @@
 /* ===============================================
 #  css
 =============================================== */
+html {
+  scroll-behavior: smooth;
+}
 
 header {
   // margin-right: calc(140/1400*100%);
@@ -24,10 +27,6 @@ header {
   position: fixed;
   z-index: 200;
   width: 100%;
-
-  .logo {
-    width: calc(70/99*100%);
-  }
 
   .navInner {
     width: 90%;
@@ -67,6 +66,10 @@ header {
   }
 }
 
+.logo {
+  width: calc(70/99*100%);
+}
+
 #header.add-shadow {
   box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.137);
 }
@@ -75,6 +78,8 @@ header {
 
 #container {
   position: relative;
+
+
 
   .mvWrap {
     position: relative;
@@ -458,8 +463,9 @@ header {
   }
 
   .contact {
-    margin-right: 0;
-    margin-left: 0;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
     width: 100vw;
     position: relative;
     margin-bottom: 135px;
@@ -519,6 +525,7 @@ footer {
 
   .footLogo {
     margin-bottom: 20px;
+    margin-right: -30px;
   }
 
   nav {
@@ -595,7 +602,11 @@ footer {
   display: block;
 }
 
-
+.otherPage {
+  footer {
+    margin-bottom: 0;
+  }
+}
 
 /* ===============================================
 # media query
@@ -669,6 +680,7 @@ footer {
 
         .tab-group {
           margin-bottom: 15px;
+          margin-left: 12px;
 
           .tab {
             font-size: 12px;
@@ -790,58 +802,108 @@ footer {
   }
 }
 
-/* PC */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1180px) {
   #container {
-    .txtArea {
-      padding: 20px 15px;
+    section {
+      .b_title {
+        font-size: 100px;
+        top: 64px;
+      }
+
+      .tab-group {
+        max-width: 320px;
+      }
     }
+  }
 
-    .modal__content {
-      width: 90%;
-    }
+}
 
-    .slick-slide img {
-      height: 30vh;
-    }
+/* sp */
+@media screen and (max-width: 480px) {
+  body {
+    #container {
+      section {
+        .ttl {
+          span {
+            font-size: 12px;
+            margin-left: 5px;
+          }
+        }
+      }
 
-    .works {
-      margin-bottom: 90px;
-      padding-bottom: 60px;
+      .profile {
+        margin-bottom: 50px;
+      }
 
-      .inner {
-        .smallTtl {
-          font-size: 14px;
+      .modalInner {
+        padding: 0;
+      }
+
+      .txtArea {
+        padding: 20px 15px;
+      }
+
+      .modal__content {
+        width: 90%;
+      }
+
+      .slick-slide img {
+        height: 30vh;
+      }
+
+      .works {
+        margin-bottom: 90px;
+        padding-bottom: 60px;
+
+        .inner {
+          .smallTtl {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .contactImgInner {
+        // overflow: inherit;
+        height: 25vh;
+
+        img {
+          top: -30%;
+        }
+      }
+
+      .contact {
+        margin-bottom: 90px;
+
+        .contactTtl {
+          width: 100%;
+
+          h2 {
+            font-size: 25px;
+            margin-bottom: 8px;
+          }
+
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+
+      #mailform {
+        padding: 0 8%;
+        padding-top: 20%;
+
+
+        form {
+          width: 100%;
         }
       }
     }
+  }
+}
 
-    .contactImgInner {
-      // overflow: inherit;
-      height: 25vh;
-
-      img {
-        top: -30%;
-      }
-    }
-
-    .contact {
-      margin-bottom: 90px;
-
-      .contactTtl {
-        width: 100%;
-
-        h2 {
-          font-size: 25px;
-          margin-bottom: 8px;
-        }
-
-        p {
-          font-size: 12px;
-        }
-      }
-    }
-
+@media screen and (min-width: 480px) {
+  .spBr {
+    display: none;
   }
 }
 
@@ -955,16 +1017,14 @@ footer {
   z-index: 200;
 }
 
-.js-modal-close {
-  cursor: pointer;
-}
-
 .modal__bg {
   background: rgba(0, 0, 0, 0.8);
   height: 100vh;
   position: absolute;
   width: 100%;
+  cursor: pointer;
 }
+
 
 .modal__content {
   left: 50%;

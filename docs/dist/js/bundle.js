@@ -103,7 +103,8 @@ $(function () {
     $('.js-modal').fadeOut();
     return false;
   });
-}); // モーダル開閉時の背景固定非固定
+});
+$('.js-modal-close').on('click', function () {}); // モーダル開閉時の背景固定非固定
 // $(function(){
 // 	var scrollPosition;
 // 	$(".js-modal-open").on("click", function() {

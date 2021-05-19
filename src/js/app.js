@@ -114,6 +114,7 @@ $(function(){
       return false;
   });
 });
+$('.js-modal-close').on('click', function(){});
 
 // モーダル開閉時の背景固定非固定
 
