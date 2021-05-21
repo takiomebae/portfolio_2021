@@ -91,6 +91,7 @@ header {
     margin-right: auto;
     margin-left: auto;
 
+
     img {
       position: absolute;
       top: 0;
@@ -98,6 +99,7 @@ header {
       width: calc(1025 /1400 * 100%);
       z-index: 1;
     }
+
 
     .grayBox {
       position: absolute;
@@ -125,6 +127,7 @@ header {
     content: "";
     display: block;
     padding-top: calc(753 /1400 * 100%);
+
   }
 
   section {
@@ -804,6 +807,11 @@ footer {
 
 @media screen and (max-width: 1180px) {
   #container {
+    .profile {
+      margin-bottom: 280px;
+
+    }
+
     section {
       .b_title {
         font-size: 100px;
