@@ -1231,3 +1231,58 @@ body.fixed {
     opacity: 1;
   }
 }
+
+// photo
+
+#photopage {
+
+  .photoBfAf {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      width: calc(625/1280*100%);
+      height: auto;
+    }
+  }
+
+  .photoBfAf:nth-child(4) {
+    justify-content: center;
+
+    img {
+      width: calc(400/1280*100%);
+      margin: 0 15px 50px;
+    }
+  }
+
+  .port {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      width: 30%;
+    }
+  }
+
+  .retouch {
+    margin-bottom: 100px;
+  }
+}
+
+#photopage.detailbody {
+  .inner {
+    padding-top: 150px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  #photopage {
+    .port {
+      display: block;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

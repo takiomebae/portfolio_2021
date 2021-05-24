@@ -59,7 +59,7 @@ $(function () {
     $('.fadeItem').each(function () {
       const targetPosition = $(this).offset().top;
 
-      if (scrollAmount > targetPosition - wHeight + 60) {
+      if (scrollAmount > targetPosition - wHeight + 200) {
         $(this).addClass("fadeInDown");
       }
     });
